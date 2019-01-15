@@ -1,0 +1,17 @@
+{
+  "name": "wcp-node",
+  "version": "0.0.2",
+  "description": "Node client for Workday Cloud Platform",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "base-64": "^0.1.0",
+    "utf8": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
