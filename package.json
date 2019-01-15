@@ -1,12 +1,19 @@
 {
   "name": "wcp-node",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Node client for Workday Cloud Platform",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.18.0",
     "base-64": "^0.1.0",
     "utf8": "^3.0.0"
+  },
+  "repository": {
+  "type" : "git",
+  "url" : "https://github.com/anthonylai/wcp-node"
+  }
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {},
   "scripts": {

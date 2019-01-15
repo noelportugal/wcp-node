@@ -58,9 +58,9 @@ class Wcp {
         },
       };
       const completeUrl = `https://api.workday.com${url}`;
-      console.log('url', url);
-      console.log('completeUrl', completeUrl);
-      console.log('data', data);
+      // console.log('url', url);
+      // console.log('completeUrl', completeUrl);
+      // console.log('data', data);
       // console.log('config', config);
       switch (method) {
         case 'get':
@@ -81,7 +81,7 @@ class Wcp {
     }  catch (e) {
       if (retry) {
         await this.getToken();
-        console.log('retrieved token');
+        // console.log('retrieved token');
         return this.execute(method, url, data, options, retry - 1);
       } else {
         // console.log('error', e);
