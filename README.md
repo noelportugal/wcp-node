@@ -19,7 +19,7 @@ This library works with node versions 8 and above.
 Using npm:
 
 ```bash
-$ npm install wcp-node
+$ npm install @workdaylabs/wcp-node
 ```
 
 ## End User Docs
@@ -41,7 +41,7 @@ For detailed information about Workday Cloud Platform, head out here:
 Acquire and setup the `wcp` object
 
 ```js
-const Wcp = require('wcp-node');
+const Wcp = require('@workdaylabs/wcp-node');
 
 const tenantAlias = '{tenantAlias}';
 const clientId = '{clientId}';
