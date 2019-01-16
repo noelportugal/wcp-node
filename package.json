@@ -1,6 +1,6 @@
 {
   "name": "@workdaylabs/wcp-node",
-  "version": "0.0.5",
+  "version": "0.0.3",
   "description": "Node client for Workday Cloud Platform",
   "main": "index.js",
   "dependencies": {

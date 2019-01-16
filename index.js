@@ -85,6 +85,7 @@ class Wcp {
         return this.execute(method, url, data, options, retry - 1);
       } else {
         // console.log('error', e);
+        // throw e;
         throw e;
       }
     }
