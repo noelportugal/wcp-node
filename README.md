@@ -113,4 +113,4 @@ postFeedback();
 
 ## Problems?
 
-Please log issues in [the github repository](https://github.com/anthonylai/wcp-node)
+Please log issues in [the github repository](https://github.com/workdaylabs/wcp-node.git)

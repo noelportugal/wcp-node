@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/anthonylai/wcp-node"
+    "url": "https://github.com/workdaylabs/wcp-node.git"
   },
   "publishConfig": {
     "access": "public"
