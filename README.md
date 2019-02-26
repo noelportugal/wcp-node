@@ -78,6 +78,8 @@ const getWorkers = async () => {
 	const result = await wcp.get(url);
 	console.log('result', result);
 }
+
+getWorkers();
 ```
 
 Performing a `POST` request
@@ -95,13 +97,16 @@ const postFeedback = async () => {
   try {
     console.log('result', await wcp.post(url, data));
   } catch (e) {
-    if (e.response && e.response.data && e.response.data.errors) {
+    if (e.response && e.response.data && e.response.data.error) {
+      console.log(e.response.data.error);
       console.log(e.response.data.errors);
     } else {
       console.log(e.toString());
     }
   }
 }
+
+postFeedback();
 ```
 
 `PUT` and `PATCH` requests are similar to `POST`

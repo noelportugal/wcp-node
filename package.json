@@ -1,6 +1,6 @@
 {
   "name": "@workdaylabs/wcp-node",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Node client for Workday Cloud Platform",
   "main": "index.js",
   "dependencies": {
@@ -17,6 +17,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "keywords": [
+  "Workday", "Workday Labs", "Workday Cloud Platform"
+  ],
+  "homepage": "https://cloud.workday.com",
+  "author": "anthony.lai@workday.com",
   "license": "ISC"
 }

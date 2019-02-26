@@ -27,7 +27,40 @@ class Wcp {
       this.token = result.data;
       return result.data;
     } catch (e) {
-      throw new Error(`error retrieving access token:  please verify your tenant alias, client id, and client secret and ensure your Workday instance is up and running. ${e.toString()}`);
+      console.log('Error retrieving access token:  please verify your tenant alias, client id, and client secret and ensure your Workday instance is up and running.');
+      throw e;
+    }
+  }
+
+// This function is specifically for auth code authentication flow.  Not used.
+// to work with auth code grant, set authToken
+// change getToken to retrieve accessToken differently base on whether authCode is set
+  async setAuthCode(authCode) {
+    this.authCode = authCode;
+  }
+
+// This function is specifically for auth code authentication flow.  Not used.
+// https://auth.api.workday.com/v1/authorize?response_type=code&client_id=YTRkOWExYmQtZDU1Ni00ODM4LTlhNWMtOTc4NTYzNzkzMTM5&redirect_uri=http://localhost:8080/callback&scope=read
+  async getAuthCodeToken(authToken) {
+    try {
+      const url = `https://auth.api.${this.site}.com/v1/token`;
+      const reqBody = `grant_type=authorization_code&code=${authToken}`;
+      const config = {
+        headers: {
+          withCredentials: true,
+          'content-type': 'application/x-www-form-urlencoded',
+        },
+        auth: {
+          username: this.clientId,
+          password: this.clientSecret,
+        },
+      };
+      const result = await axios.post(url, reqBody, config);
+      this.token = result.data;
+      return result.data;
+    } catch (e) {
+      console.log('Error retrieving access token:  please verify your tenant alias, client id, and client secret and ensure your Workday instance is up and running.');
+      throw e;
     }
   }
 
@@ -49,6 +82,10 @@ class Wcp {
 
 
   async execute(method, url, data, options = {}, retry = 1) {
+    if (retry && !this.token) {
+      retry--;
+      await this.getToken();
+    }
     let result;
     try {
       const config = {
@@ -85,7 +122,6 @@ class Wcp {
         return this.execute(method, url, data, options, retry - 1);
       } else {
         // console.log('error', e);
-        // throw e;
         throw e;
       }
     }
