@@ -18,7 +18,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-  "Workday", "Workday Labs", "Workday Cloud Platform"
+    "Workday",
+    "Workday Labs",
+    "Workday Cloud Platform"
   ],
   "homepage": "https://cloud.workday.com",
   "author": "anthony.lai@workday.com",
