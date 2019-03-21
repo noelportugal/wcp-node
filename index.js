@@ -88,12 +88,13 @@ class Wcp {
     }
     let result;
     try {
-      const config = {
+      let config = {
         headers: {
           withCredentials: true,
           Authorization: `Bearer ${this.token.access_token}`,
         },
       };
+      config.headers = {...config.headers, ...options.headers};
       const completeUrl = `https://api.workday.com${url}`;
       // console.log('url', url);
       // console.log('completeUrl', completeUrl);
